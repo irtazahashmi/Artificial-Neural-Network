@@ -42,6 +42,10 @@ if __name__ == "__main__":
     test_labels = np.asarray(test_labels)
     class_names = np.asarray(class_names)
 
+    # Scale these values to a range of 0 to 1 before feeding them to the neural network model.
+    training_images = training_images / 255.0
+    test_images = test_images / 255.0
+
     # Building the model.
     # The first layer is flatten: transforms the images from 2d to 1d. Taking all the pixels and putting them
     # in a line. This layer just reformats the data, doesn't learn anything.
